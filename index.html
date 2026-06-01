@@ -339,6 +339,39 @@
             transform: translateY(-2px);
         }
 
+        /* 🎮 Gaming Tab Styling */
+        .gaming-card {
+            background-color: #0d1117 !important;
+            border: 2px solid #00ffcc !important;
+            border-top: 4px solid #00ffcc !important;
+            border-radius: 8px !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8), inset 0 0 20px rgba(0, 255, 204, 0.1) !important;
+        }
+
+        .gaming-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #00ffcc !important;
+            letter-spacing: 3px;
+            text-align: center;
+            margin-bottom: 25px;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+        }
+
+        .gaming-card .media-link {
+            background: rgba(0, 255, 204, 0.1) !important;
+            color: #fff !important;
+            border: 1px solid rgba(0, 255, 204, 0.3) !important;
+        }
+
+        .gaming-card .media-link:hover {
+            background: rgba(0, 255, 204, 0.3) !important;
+            border-color: #00ffcc !important;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+            transform: translateY(-2px);
+        }
+
         .media-tags {
             display: flex;
             flex-wrap: wrap;
@@ -379,6 +412,7 @@
         .cinema-popup { left: 15%; }
         .cartoon-popup { right: 15%; }
         .anime-popup { left: 50%; transform: translateX(-50%); }
+        .gaming-popup { right: 35%; }
 
         /* Specific Filters & Tweaks */
         #bb-popup { filter: drop-shadow(0px 0px 25px rgba(0, 150, 255, 0.8)); }
@@ -389,11 +423,15 @@
         #omnitrix-popup { filter: drop-shadow(0px 0px 25px rgba(57, 255, 20, 0.6)); }
         #cn-popup { filter: drop-shadow(0px 5px 20px rgba(255, 255, 255, 0.4)); }
 
-        /* Updated Anime Filters */
         #jojo-popup { filter: drop-shadow(0px 0px 25px rgba(142, 36, 170, 0.9)); }
         #jjk-popup { filter: drop-shadow(0px 0px 30px rgba(0, 212, 255, 0.9)); }
         #deathnote-popup { filter: drop-shadow(0px 0px 25px rgba(255, 255, 255, 0.5)); }
         #fons-popup { filter: drop-shadow(0px 0px 20px rgba(255, 0, 0, 0.7)); }
+
+        /* Gaming Filters */
+        #mc-popup { filter: drop-shadow(0px 0px 25px rgba(46, 171, 82, 0.8)); }
+        #roblox-popup { filter: drop-shadow(0px 0px 25px rgba(227, 36, 43, 0.8)); }
+        #pubg-popup { filter: drop-shadow(0px 0px 25px rgba(150, 150, 150, 0.8)); }
 
         /* Visual Gallery Section */
         .gallery {
@@ -526,6 +564,7 @@
             .cinema-popup { left: 5%; }
             .cartoon-popup { right: 5%; }
             .anime-popup { left: 50%; transform: translateX(-50%); }
+            .gaming-popup { right: 50%; transform: translateX(50%); }
         }
     </style>
 </head>
@@ -603,6 +642,17 @@
                         <a href="#" target="_blank" class="media-link" id="jjk-btn">Jujutsu Kaisen</a>
                         <a href="#" target="_blank" class="media-link" id="deathnote-btn">Death Note</a>
                         <a href="#" target="_blank" class="media-link" id="fons-btn">Fist of the North Star</a>
+                    </div>
+                </div>
+
+                <!-- Custom Styled Gaming Tab -->
+                <div class="card reveal gaming-card" style="transition-delay: 0.6s;">
+                    <h3>Gaming Server</h3>
+                    <p>From placing blocks to battle royales, gaming is a core module. Here are the top titles in my library:</p>
+                    <div class="media-tags">
+                        <a href="https://www.minecraft.net" target="_blank" class="media-link" id="mc-btn">Minecraft</a>
+                        <a href="https://www.roblox.com" target="_blank" class="media-link" id="roblox-btn">Roblox (JJS)</a>
+                        <a href="https://www.pubg.com" target="_blank" class="media-link" id="pubg-btn">PUBG (10th Grade Era)</a>
                     </div>
                 </div>
             </div>
@@ -760,6 +810,34 @@
         <circle cx="170" cy="90" r="7" fill="#d32f2f"/>
     </svg>
 
+    <!-- Minecraft: Creeper Face -->
+    <svg id="mc-popup" class="easter-popup gaming-popup" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="40" width="120" height="120" fill="#2EAB52" stroke="#1B632F" stroke-width="4"/>
+        <rect x="60" y="70" width="25" height="25" fill="#000"/>
+        <rect x="115" y="70" width="25" height="25" fill="#000"/>
+        <rect x="85" y="95" width="30" height="40" fill="#000"/>
+        <rect x="70" y="115" width="15" height="40" fill="#000"/>
+        <rect x="115" y="115" width="15" height="40" fill="#000"/>
+    </svg>
+
+    <!-- Roblox: Tilted Logo -->
+    <svg id="roblox-popup" class="easter-popup gaming-popup" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <g transform="rotate(15 100 100)">
+            <rect x="40" y="40" width="120" height="120" fill="#E3242B" rx="10"/>
+            <rect x="80" y="80" width="40" height="40" fill="#FFF" rx="5"/>
+        </g>
+    </svg>
+
+    <!-- PUBG: Level 3 Helmet -->
+    <svg id="pubg-popup" class="easter-popup gaming-popup" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 40 120 C 40 50, 160 50, 160 120 L 160 150 C 160 160, 40 160, 40 150 Z" fill="#2c2c2c" stroke="#111" stroke-width="3"/>
+        <rect x="35" y="100" width="130" height="35" fill="#111" rx="5"/>
+        <rect x="50" y="112" width="100" height="10" fill="#000"/>
+        <path d="M 100 40 L 100 100" stroke="#111" stroke-width="4"/>
+        <circle cx="45" cy="117" r="5" fill="#555"/>
+        <circle cx="155" cy="117" r="5" fill="#555"/>
+    </svg>
+
     <!-- Fullscreen Image Lightbox -->
     <div id="lightbox" onclick="closeLightbox()">
         <img id="lightbox-img" src="" alt="Fullscreen view">
@@ -779,7 +857,11 @@
             { btn: 'jojo-btn', popup: 'jojo-popup' },
             { btn: 'jjk-btn', popup: 'jjk-popup' },
             { btn: 'deathnote-btn', popup: 'deathnote-popup' },
-            { btn: 'fons-btn', popup: 'fons-popup' }
+            { btn: 'fons-btn', popup: 'fons-popup' },
+            // Gaming Popups
+            { btn: 'mc-btn', popup: 'mc-popup' },
+            { btn: 'roblox-btn', popup: 'roblox-popup' },
+            { btn: 'pubg-btn', popup: 'pubg-popup' }
         ];
 
         popups.forEach(item => {
