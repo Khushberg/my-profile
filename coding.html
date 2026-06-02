@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khush Thakkar | Python Bootcamp Terminal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Shared Theme Variables from prototype3.html */
+        :root {
+            --bg-dark: #0d0d0d;
+            --bg-card: #1a1a1a;
+            --accent-red: #d32f2f; 
+            --accent-green: #39ff14;
+            --text-main: #f5f5f5;
+            --text-muted: #aaaaaa;
+            --python-blue: #3776AB;
+            --python-yellow: #FFD43B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(13, 13, 13, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            z-index: 1000;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-red);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.9)), 
+                        url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            padding: 0 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        .hero h1 span {
+            color: var(--python-blue);
+            text-shadow: 0 0 20px rgba(55, 118, 171, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            font-weight: 400;
+        }
+
+        /* Container & Grid Layout */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Technical Progress Section */
+        .dashboard-panel {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .dashboard-header h2 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .day-badge {
+            background-color: rgba(55, 118, 171, 0.1);
+            border: 1px solid var(--python-blue);
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        /* 100-Day Progress Bar Styling */
+        .progress-track {
+            background-color: rgba(255,255,255,0.05);
+            width: 100%;
+            height: 24px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 15px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 2%; /* Calibrated to exactly Day 2 of 100 */
+            background: linear-gradient(90deg, var(--python-blue), var(--python-yellow));
+            box-shadow: 0 0 15px rgba(55, 118, 171, 0.8);
+            transition: width 0.5s ease;
+        }
+
+        .progress-labels {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+        }
+
+        /* Operational Logs Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-top: 4px solid var(--python-blue);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .card ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--python-yellow);
+            font-size: 1.2rem;
+        }
+
+        /* Status Indicators */
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-green);
+            border-radius: 50%;
+            margin-right: 8px;
+            box-shadow: 0 0 8px var(--accent-green);
+        }
+
+        /* Footer Element */
+        footer {
+            background-color: #050505;
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 60px;
+        }
+
+        .footer-text {
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Adjustments */
+        @media screen and (max-width: 768px) {
+            nav { padding: 15px; }
+            .hero h1 { font-size: 2.3rem; }
+            .container { padding: 40px 15px; }
+            .dashboard-panel, .card { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <!-- Linking directly back to sections in prototype3.html -->
+        <a href="prototype3.html#home">← Main Blueprint</a>
+        <a href="prototype3.html#media">Media Logs</a>
+        <a href="prototype3.html#gallery">Visuals</a>
+        <a href="prototype3.html#contact">Connect</a>
+    </nav>
+
+    <header class="hero">
+        <h1>Python <span>Bootcamp</span></h1>
+        <p>A continuous execution matrix mapping 100 days of algorithmic design, automation architectures, and engineering logic.</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Live Visual Progress Terminal Container -->
+        <div class="dashboard-panel">
+            <div class="dashboard-header">
+                <h2>System Execution Tracker</h2>
+                <div class="day-badge"><span class="status-dot"></span>Active: Day 2 / 100</div>
+            </div>
+            
+            <!-- Progress tracking bar going up to Day 100 -->
+            <div class="progress-track" title="Current Progress: 2%">
+                <div class="progress-fill"></div>
+            </div>
+            
+            <div class="progress-labels">
+                <span>Day 0</span>
+                <span style="color: var(--python-blue); font-weight: 700;">Current: 2% Complete</span>
+                <span>Day 100</span>
+            </div>
+        </div>
+
+        <!-- Details Grid for Daily Logs -->
+        <div class="info-grid">
+            
+            <!-- Current Operations Box -->
+            <div class="card">
+                <h3>Current Operations</h3>
+                <p>Focusing on the architectural primitives of the Python core syntax. Constructing scripts handling basic computation routines.</p>
+                <ul>
+                    <li><strong>Module Focus:</strong> Advanced Primitive Data Types & String Manipulations.</li>
+                    <li><strong>Core Mechanics:</strong> Variable assignment, casting parameters, mathematical operation hierarchies, and structural concatenation.</li>
+                    <li><strong>Active Project:</strong> Developing runtime calculators designed to evaluate precision algorithmic data inputs.</li>
+                </ul>
+            </div>
+
+            <!-- Future Compilation Parameters -->
+            <div class="card" style="border-top-color: var(--python-yellow);">
+                <h3>Upcoming Execution Modules</h3>
+                <p>The progression logic scales rapidly into complex software methodologies. Next major phase parameters:</p>
+                <ul>
+                    <li><strong>Days 3–7:</strong> Dynamic logical branches, structural flow controls, list architectures, and code repetition patterns.</li>
+                    <li><strong>Days 15–30:</strong> Object-Oriented Programming (OOP) mechanics and functional localized data processing frameworks.</li>
+                    <li><strong>Days 30+:</strong> Automated data engines, localized system scrapers, and external web API integrations.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p class="footer-text">&copy; 2026 Khush Thakkar. Code compiled successfully. May the Force be with your scripts.</p>
+    </footer>
+
+</body>
+</html>
