@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khush Thakkar | Python Bootcamp Terminal</title>
+    <title>Khush Thakkar | Python Bootcamp</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        /* Shared Theme Variables from prototype3.html */
+        /* Theme Variables */
         :root {
             --bg-dark: #0d0d0d;
             --bg-card: #1a1a1a;
@@ -67,7 +67,7 @@
 
         /* Hero Section */
         .hero {
-            height: 60vh;
+            height: 50vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -94,7 +94,7 @@
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
             max-width: 600px;
             font-weight: 400;
@@ -107,7 +107,7 @@
             padding: 60px 20px;
         }
 
-        /* Technical Progress Section */
+        /* Progress Section */
         .dashboard-panel {
             background-color: var(--bg-card);
             border-radius: 8px;
@@ -143,7 +143,7 @@
             font-size: 0.9rem;
         }
 
-        /* 100-Day Progress Bar Styling */
+        /* 100-Day Progress Bar */
         .progress-track {
             background-color: rgba(255,255,255,0.05);
             width: 100%;
@@ -157,10 +157,9 @@
 
         .progress-fill {
             height: 100%;
-            width: 2%; /* Calibrated to exactly Day 2 of 100 */
+            width: 2%; /* Day 2 of 100 = 2% */
             background: linear-gradient(90deg, var(--python-blue), var(--python-yellow));
             box-shadow: 0 0 15px rgba(55, 118, 171, 0.8);
-            transition: width 0.5s ease;
         }
 
         .progress-labels {
@@ -172,7 +171,7 @@
             font-weight: 500;
         }
 
-        /* Operational Logs Grid */
+        /* Info Grid */
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -191,11 +190,13 @@
             font-size: 1.4rem;
             margin-bottom: 15px;
             color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .card p {
             color: var(--text-muted);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .card ul {
@@ -205,19 +206,18 @@
         .card ul li {
             position: relative;
             padding-left: 25px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: var(--text-main);
         }
 
         .card ul li::before {
-            content: '▹';
+            content: '→';
             position: absolute;
             left: 0;
             color: var(--python-yellow);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
-        /* Status Indicators */
         .status-dot {
             display: inline-block;
             width: 8px;
@@ -228,11 +228,11 @@
             box-shadow: 0 0 8px var(--accent-green);
         }
 
-        /* Footer Element */
+        /* Footer */
         footer {
             background-color: #050505;
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 20px;
             border-top: 1px solid rgba(255,255,255,0.05);
             margin-top: 60px;
         }
@@ -242,7 +242,6 @@
             font-size: 0.9rem;
         }
 
-        /* Mobile Adjustments */
         @media screen and (max-width: 768px) {
             nav { padding: 15px; }
             .hero h1 { font-size: 2.3rem; }
@@ -254,8 +253,7 @@
 <body>
 
     <nav>
-        <!-- Linking directly back to sections in prototype3.html -->
-        <a href="prototype3.html#home">← Main Blueprint</a>
+        <a href="prototype3.html#home">← Main Site</a>
         <a href="prototype3.html#media">Media Logs</a>
         <a href="prototype3.html#gallery">Visuals</a>
         <a href="prototype3.html#contact">Connect</a>
@@ -263,52 +261,53 @@
 
     <header class="hero">
         <h1>Python <span>Bootcamp</span></h1>
-        <p>A continuous execution matrix mapping 100 days of algorithmic design, automation architectures, and engineering logic.</p>
+        <p>My 100-day journey to mastering Python. Building real projects, writing clean code, and tracking progress daily.</p>
     </header>
 
     <div class="container">
         
-        <!-- Live Visual Progress Terminal Container -->
+        <!-- Progress Bar Dashboard -->
         <div class="dashboard-panel">
             <div class="dashboard-header">
-                <h2>System Execution Tracker</h2>
-                <div class="day-badge"><span class="status-dot"></span>Active: Day 2 / 100</div>
+                <h2>Bootcamp Progress</h2>
+                <div class="day-badge"><span class="status-dot"></span>Day 2 / 100</div>
             </div>
             
-            <!-- Progress tracking bar going up to Day 100 -->
-            <div class="progress-track" title="Current Progress: 2%">
+            <div class="progress-track" title="Progress: 2%">
                 <div class="progress-fill"></div>
             </div>
             
             <div class="progress-labels">
                 <span>Day 0</span>
-                <span style="color: var(--python-blue); font-weight: 700;">Current: 2% Complete</span>
+                <span style="color: var(--python-blue); font-weight: 700;">Day 2 in Progress</span>
                 <span>Day 100</span>
             </div>
         </div>
 
-        <!-- Details Grid for Daily Logs -->
+        <!-- Future Content & Project Mapping -->
         <div class="info-grid">
             
-            <!-- Current Operations Box -->
+            <!-- What I'm Going to Learn -->
             <div class="card">
-                <h3>Current Operations</h3>
-                <p>Focusing on the architectural primitives of the Python core syntax. Constructing scripts handling basic computation routines.</p>
+                <h3>What I'm Going to Learn</h3>
+                <p>An overview of the core concepts, logic, and professional libraries I will be mastering over the course of the bootcamp.</p>
                 <ul>
-                    <li><strong>Module Focus:</strong> Advanced Primitive Data Types & String Manipulations.</li>
-                    <li><strong>Core Mechanics:</strong> Variable assignment, casting parameters, mathematical operation hierarchies, and structural concatenation.</li>
-                    <li><strong>Active Project:</strong> Developing runtime calculators designed to evaluate precision algorithmic data inputs.</li>
+                    <li><strong>Python Programming Logic:</strong> Mastering loops, functions, lists, and conditional statements.</li>
+                    <li><strong>Object-Oriented Programming:</strong> Learning how to write clean, reusable, and organized code using classes.</li>
+                    <li><strong>Web Scraping & APIs:</strong> Pulling live data from websites and connecting to external web services.</li>
+                    <li><strong>Data & Automation:</strong> Working with local files, databases, and writing scripts to automate boring, repetitive tasks.</li>
                 </ul>
             </div>
 
-            <!-- Future Compilation Parameters -->
+            <!-- What I'm Going to Build -->
             <div class="card" style="border-top-color: var(--python-yellow);">
-                <h3>Upcoming Execution Modules</h3>
-                <p>The progression logic scales rapidly into complex software methodologies. Next major phase parameters:</p>
+                <h3>Projects I'm Going to Build</h3>
+                <p>The best way to learn code is by making things that actually work. Here are the major projects on the roadmap:</p>
                 <ul>
-                    <li><strong>Days 3–7:</strong> Dynamic logical branches, structural flow controls, list architectures, and code repetition patterns.</li>
-                    <li><strong>Days 15–30:</strong> Object-Oriented Programming (OOP) mechanics and functional localized data processing frameworks.</li>
-                    <li><strong>Days 30+:</strong> Automated data engines, localized system scrapers, and external web API integrations.</li>
+                    <li><strong>Classic Arcade Games:</strong> Building interactive programs like Snake, Pong, and Blackjack from scratch.</li>
+                    <li><strong>Automation Bots:</strong> Creating smart scripts that scrape web data, send automated emails, and process files.</li>
+                    <li><strong>Web Applications:</strong> Developing functional web apps driven by backend Python code and real databases.</li>
+                    <li><strong>Data Dashboards:</strong> Building clean, visual programs to analyze information and chart custom data trends.</li>
                 </ul>
             </div>
 
@@ -316,7 +315,7 @@
     </div>
 
     <footer>
-        <p class="footer-text">&copy; 2026 Khush Thakkar. Code compiled successfully. May the Force be with your scripts.</p>
+        <p class="footer-text">&copy; 2026 Khush Thakkar. Keep coding.</p>
     </footer>
 
 </body>
