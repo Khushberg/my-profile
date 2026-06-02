@@ -15,8 +15,6 @@
             --text-main: #f5f5f5;
             --text-muted: #aaaaaa;
             --discord-blurple: #5865F2;
-            --python-blue: #3776AB;
-            --python-yellow: #FFD43B;
         }
 
         html {
@@ -191,19 +189,6 @@
             left: 0;
             color: var(--accent-red);
             font-size: 1.2rem;
-        }
-        
-        /* Coding Section Customization */
-        .python-card {
-            border-top: 4px solid var(--python-blue);
-        }
-
-        .python-card:hover {
-            box-shadow: 0 15px 40px rgba(55, 118, 171, 0.15);
-        }
-        
-        .python-card ul li::before {
-            color: var(--python-yellow);
         }
 
         /* 🎬 Cinematic Noir / Film Strip Styling */
@@ -586,9 +571,10 @@
 <body>
 
     <nav>
+          <!-- Inside the nav section of prototype3.html -->
+<a href="coding.html">Python Bootcamp</a>
         <a href="#home">Home</a>
         <a href="#about">Blueprint</a>
-        <a href="#coding">Coding</a>
         <a href="#media">Media Logs</a>
         <a href="#gallery">Visuals</a>
         <a href="#contact">Connect</a>
@@ -619,34 +605,6 @@
                         <li><strong>Basketball:</strong> Hitting the courts and following the fast-paced action.</li>
                     </ul>
                 </div>
-            </div>
-        </div>
-
-        <!-- The Coding Section -->
-        <div id="coding">
-            <h2 class="section-title reveal">Coding</h2>
-            <div class="info-grid">
-                
-                <div class="card reveal python-card">
-                    <h3 style="color: #3776AB;">Python Development</h3>
-                    <p>Actively expanding my core software capabilities by executing the <strong>100 Days of Code: The Complete Python Pro Bootcamp</strong> by Dr. Angela Yu. The objective is to build a robust foundation in programming logic, transitioning from simple scripts to real-world applications.</p>
-                    <ul>
-                        <li><strong>Current Status:</strong> Day 2 Operations</li>
-                        <li><strong>Module Focus:</strong> Mastering fundamental data types, variables, and string manipulation techniques.</li>
-                        <li><strong>Strategic Goal:</strong> Integrating advanced Python frameworks into future machine learning and AI development initiatives.</li>
-                    </ul>
-                </div>
-                
-                <div class="card reveal" style="transition-delay: 0.2s;">
-                    <h3>Future Directives</h3>
-                    <p>As the journey toward AI development progresses, this sector will expand to include additional languages, algorithms, and technical environments.</p>
-                    <div class="media-tags">
-                        <span class="media-link" style="cursor: default; border-color: rgba(255,255,255,0.2);">Data Structures</span>
-                        <span class="media-link" style="cursor: default; border-color: rgba(255,255,255,0.2);">Machine Learning Models</span>
-                        <span class="media-link" style="cursor: default; border-color: rgba(255,255,255,0.2);">C++</span>
-                    </div>
-                </div>
-
             </div>
         </div>
 
